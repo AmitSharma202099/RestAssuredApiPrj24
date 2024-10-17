@@ -1,6 +1,6 @@
 package com.qa.api.constants;
 
-public enum AuthTypes {
+public enum AuthType {
 
 	BEARER_TOKEN,
 	OAUTH2,

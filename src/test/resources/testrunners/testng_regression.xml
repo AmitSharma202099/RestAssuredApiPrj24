@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="API Regression Suite" verbose="3" parallel="tests" thread-count="3">
+    <test name="Create User Test">
+        <parameter name="baseUrl" value="https://gorest.co.in" />
+
+        <classes>
+            <class name="com.qa.api.tests.CreateUserTest" />
+        </classes>
+    </test>
+
+    <test name="GET User Test">
+        <parameter name="baseUrl" value="https://gorest.co.in" />
+
+        <classes>
+            <class name="com.qa.api.tests.GetUserTest" />
+        </classes>
+    </test>
+
+    <test name="Update/Put User Test">
+        <parameter name="baseUrl" value="https://gorest.co.in" />
+
+        <classes>
+            <class name="com.qa.api.tests.UpdateUserTest" />
+        </classes>
+    </test>
+
+    <test name="Partial/Patch Update User Test">
+        <parameter name="baseUrl" value="https://gorest.co.in" />
+
+        <classes>
+            <class name="com.qa.api.tests.PatchUserTest" />
+        </classes>
+    </test>
+
+    <test name="Delete User Test">
+        <parameter name="baseUrl" value="https://gorest.co.in" />
+
+        <classes>
+            <class name="com.qa.api.tests.DeleteUserTest" />
+        </classes>
+    </test>
+
+
+
+</suite>
