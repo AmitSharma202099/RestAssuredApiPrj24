@@ -8,12 +8,23 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">838</td><td></td><td></td></tr>
+<tr><th colspan="8">API Regression Suite</th></tr>
+<tr><td><a href="#t0">Create User Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">2,488</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">GET User Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">3,450</td><td></td><td></td></tr>
+<tr><td><a href="#t2">Update/Put User Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">7,219</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">Partial/Patch Update User Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,332</td><td></td><td></td></tr>
+<tr><td><a href="#t4">Delete User Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">4,445</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">5</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">22,934</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qa.api.tests.GetUserTest</td><td><a href="#m0">getUserTest</a></td><td rowspan="1">1728860613791</td><td rowspan="1">234</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">API Regression Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Create User Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qa.api.tests.CreateUserTest</td><td><a href="#m0">createUserWithBuilderTest</a></td><td rowspan="1">1729037970517</td><td rowspan="1">1913</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">GET User Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.qa.api.tests.GetUserTest</td><td><a href="#m1">getSingleUserTest</a></td><td rowspan="1">1729037970517</td><td rowspan="1">2018</td></tr><tr class="passedeven"><td><a href="#m2">getUserTest</a></td><td rowspan="1">1729037972538</td><td rowspan="1">858</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">Update/Put User Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.api.tests.UpdateUserTest</td><td><a href="#m3">updateUserWithBuilderTest</a></td><td rowspan="1">1729037970517</td><td rowspan="1">6648</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">Partial/Patch Update User Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.api.tests.PatchUserTest</td><td><a href="#m4">patchUserWithBuilderTest</a></td><td rowspan="1">1729037972497</td><td rowspan="1">5328</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">Delete User Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.api.tests.DeleteUserTest</td><td><a href="#m5">deleteUserWithBuilderTest</a></td><td rowspan="1">1729037973403</td><td rowspan="1">4442</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.qa.api.tests.GetUserTest#getUserTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: parametersMap cannot be null
+<h2>Create User Test</h2><h3 id="m0">com.qa.api.tests.CreateUserTest#createUserWithBuilderTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;422&gt;.
+
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -24,14 +35,12 @@
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
-	at io.restassured.internal.RequestSpecificationImpl.queryParams(RequestSpecificationImpl.groovy:466)
-	at com.qa.api.client.RestClient.get(RestClient.java:103)
-	at com.qa.api.tests.GetUserTest.getUserTest(GetUserTest.java:24)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$4.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at com.qa.api.client.RestClient.post(RestClient.java:121)
+	at com.qa.api.tests.CreateUserTest.createUserWithBuilderTest(CreateUserTest.java:37)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -48,18 +57,17 @@
 	at org.testng.TestRunner.privateRun(TestRunner.java:739)
 	at org.testng.TestRunner.run(TestRunner.java:614)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>GET User Test</h2><h3 id="m1">com.qa.api.tests.GetUserTest#getSingleUserTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.qa.api.tests.GetUserTest#getUserTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Update/Put User Test</h2><h3 id="m3">com.qa.api.tests.UpdateUserTest#updateUserWithBuilderTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Partial/Patch Update User Test</h2><h3 id="m4">com.qa.api.tests.PatchUserTest#patchUserWithBuilderTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Delete User Test</h2><h3 id="m5">com.qa.api.tests.DeleteUserTest#deleteUserWithBuilderTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

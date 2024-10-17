@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-14T04:33:33 IST" name="Default suite" finished-at="2024-10-14T04:33:34 IST" duration-ms="838">
+  <suite started-at="2024-10-16T05:49:29 IST" name="API Regression Suite" finished-at="2024-10-16T05:49:37 IST" duration-ms="7899">
     <groups>
     </groups>
-    <test started-at="2024-10-14T04:33:33 IST" name="Default test" finished-at="2024-10-14T04:33:34 IST" duration-ms="838">
-      <class name="com.qa.api.tests.GetUserTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.GetUserTest@4b741d6d]" started-at="2024-10-14T04:33:33 IST" name="setup" finished-at="2024-10-14T04:33:33 IST" duration-ms="524" status="PASS">
+    <test started-at="2024-10-16T05:49:29 IST" name="Create User Test" finished-at="2024-10-16T05:49:32 IST" duration-ms="2488">
+      <class name="com.qa.api.tests.CreateUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.CreateUserTest@2cf3d63b]" started-at="2024-10-16T05:49:30 IST" name="setup" finished-at="2024-10-16T05:49:30 IST" duration-ms="509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="getUserTest()[pri:0, instance:com.qa.api.tests.GetUserTest@4b741d6d]" started-at="2024-10-14T04:33:33 IST" name="getUserTest" finished-at="2024-10-14T04:33:34 IST" duration-ms="234" status="FAIL">
-          <exception class="java.lang.IllegalArgumentException">
+        <test-method signature="createUserWithBuilderTest()[pri:0, instance:com.qa.api.tests.CreateUserTest@2cf3d63b]" started-at="2024-10-16T05:49:30 IST" name="createUserWithBuilderTest" finished-at="2024-10-16T05:49:32 IST" duration-ms="1913" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[parametersMap cannot be null]]>
+              <![CDATA[1 expectation failed.
+Expected status code <201> but was <422>.
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: parametersMap cannot be null
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <201> but was <422>.
+
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -28,14 +32,12 @@ at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.
 at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
-at io.restassured.internal.RequestSpecificationImpl.queryParams(RequestSpecificationImpl.groovy:466)
-at com.qa.api.client.RestClient.get(RestClient.java:103)
-at com.qa.api.tests.GetUserTest.getUserTest(GetUserTest.java:24)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$4.call(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+at com.qa.api.client.RestClient.post(RestClient.java:121)
+at com.qa.api.tests.CreateUserTest.createUserWithBuilderTest(CreateUserTest.java:37)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -52,25 +54,75 @@ at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
 at org.testng.TestRunner.privateRun(TestRunner.java:739)
 at org.testng.TestRunner.run(TestRunner.java:614)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserWithBuilderTest -->
+      </class> <!-- com.qa.api.tests.CreateUserTest -->
+    </test> <!-- Create User Test -->
+    <test started-at="2024-10-16T05:49:29 IST" name="GET User Test" finished-at="2024-10-16T05:49:33 IST" duration-ms="3450">
+      <class name="com.qa.api.tests.GetUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.GetUserTest@536f2a7e]" started-at="2024-10-16T05:49:30 IST" name="setup" finished-at="2024-10-16T05:49:30 IST" duration-ms="510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="getSingleUserTest()[pri:0, instance:com.qa.api.tests.GetUserTest@536f2a7e]" started-at="2024-10-16T05:49:30 IST" name="getSingleUserTest" finished-at="2024-10-16T05:49:32 IST" duration-ms="2018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSingleUserTest -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.GetUserTest@536f2a7e]" started-at="2024-10-16T05:49:32 IST" name="setup" finished-at="2024-10-16T05:49:32 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="getUserTest()[pri:0, instance:com.qa.api.tests.GetUserTest@536f2a7e]" started-at="2024-10-16T05:49:32 IST" name="getUserTest" finished-at="2024-10-16T05:49:33 IST" duration-ms="858" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUserTest -->
       </class> <!-- com.qa.api.tests.GetUserTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- GET User Test -->
+    <test started-at="2024-10-16T05:49:29 IST" name="Update/Put User Test" finished-at="2024-10-16T05:49:37 IST" duration-ms="7219">
+      <class name="com.qa.api.tests.UpdateUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.UpdateUserTest@7a5ceedd]" started-at="2024-10-16T05:49:30 IST" name="setup" finished-at="2024-10-16T05:49:30 IST" duration-ms="509" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="updateUserWithBuilderTest()[pri:0, instance:com.qa.api.tests.UpdateUserTest@7a5ceedd]" started-at="2024-10-16T05:49:30 IST" name="updateUserWithBuilderTest" finished-at="2024-10-16T05:49:37 IST" duration-ms="6648" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUserWithBuilderTest -->
+      </class> <!-- com.qa.api.tests.UpdateUserTest -->
+    </test> <!-- Update/Put User Test -->
+    <test started-at="2024-10-16T05:49:32 IST" name="Partial/Patch Update User Test" finished-at="2024-10-16T05:49:37 IST" duration-ms="5332">
+      <class name="com.qa.api.tests.PatchUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.PatchUserTest@2ab4bc72]" started-at="2024-10-16T05:49:32 IST" name="setup" finished-at="2024-10-16T05:49:32 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="patchUserWithBuilderTest()[pri:0, instance:com.qa.api.tests.PatchUserTest@2ab4bc72]" started-at="2024-10-16T05:49:32 IST" name="patchUserWithBuilderTest" finished-at="2024-10-16T05:49:37 IST" duration-ms="5328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- patchUserWithBuilderTest -->
+      </class> <!-- com.qa.api.tests.PatchUserTest -->
+    </test> <!-- Partial/Patch Update User Test -->
+    <test started-at="2024-10-16T05:49:33 IST" name="Delete User Test" finished-at="2024-10-16T05:49:37 IST" duration-ms="4445">
+      <class name="com.qa.api.tests.DeleteUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.DeleteUserTest@6f204a1a]" started-at="2024-10-16T05:49:33 IST" name="setup" finished-at="2024-10-16T05:49:33 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="deleteUserWithBuilderTest()[pri:0, instance:com.qa.api.tests.DeleteUserTest@6f204a1a]" started-at="2024-10-16T05:49:33 IST" name="deleteUserWithBuilderTest" finished-at="2024-10-16T05:49:37 IST" duration-ms="4442" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUserWithBuilderTest -->
+      </class> <!-- com.qa.api.tests.DeleteUserTest -->
+    </test> <!-- Delete User Test -->
+  </suite> <!-- API Regression Suite -->
 </testng-results>
